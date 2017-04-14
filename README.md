@@ -1,1 +1,1 @@
-# codejam
+Google code jam programming contest.
