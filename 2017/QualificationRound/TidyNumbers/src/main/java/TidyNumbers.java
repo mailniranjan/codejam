@@ -6,10 +6,15 @@ import java.io.IOException;
  */
 public class TidyNumbers {
     public static void main(String[] args) throws IOException {
-        System.out.println(new File(".").getAbsolutePath());
-        String parent = new File(new File("."), "src\\main\\resources").getAbsolutePath();
-        InputReader inputReader = new InputReader(new File(parent, "input.in"));
-        OutputWriter outputWriter = new OutputWriter(new File(parent, "output.txt"));
+        if(args.length != 2)
+        {
+            System.out.println("Please provide input file and output file locations");
+            System.exit(0);
+        }
+        File input = new File(args[0]);
+        File output = new File(args[1]);
+        InputReader inputReader = new InputReader(input);
+        OutputWriter outputWriter = new OutputWriter(output);
         new TidyNumbers(inputReader, outputWriter).process();
     }
 
